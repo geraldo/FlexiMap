@@ -1,0 +1,122 @@
+html,
+body,
+#map {
+	height: 95%;
+	margin:0;
+}
+
+path.landuse,
+path.building {
+	stroke:none;
+}
+ 
+path { stroke-linejoin; round; stroke-linecap: butt; fill: none}
+path.river { stroke : #24b; }
+path.water { stroke: #B1D1F5; fill: #B1D1F5; }
+
+path.rail {
+	stroke-dasharray:5,5;
+	stroke:grey;
+}
+
+/* ORDER
+1. Map background
+2. Text
+3. Roads
+4. Water
+5. Polygon features
+6. POIS */
+
+/*map background*/
+.leaflet-container {
+  background-color:#efebe2;
+}
+
+/*text*/
+.text {
+	color: white;
+	text-shadow: 0 0 0.2em white, 0 0 0.2em white, 0 0 0.2em white;
+	dominant-baseline: middle;
+}
+
+/*Streets*/
+path {
+  stroke-linejoin; round; stroke-linecap: butt; fill: none
+}
+.highway{
+  stroke-width:7px;
+  stroke:#F78545;
+}
+.major_road{
+  stroke-width:8px;
+  stroke:white;
+}
+.minor_road{
+  stroke-width:4px;
+  stroke:white;
+}
+.path{
+  stroke-width:0.5px;
+  stroke:white;
+}
+.rail {
+  stroke-dasharray:5,5;
+  stroke:grey;
+}
+
+.highway,
+.major_road,
+.minor_road,
+.path,
+.rail {
+	stroke: #F99;
+}
+
+/*Polygon features*/
+.pois {
+  fill:#AB71AD;
+}
+
+/* buildings */
+.building, 
+.place_of_worship, 
+.fuel, 
+.library, 
+.industrial, 
+.commercial, 
+.hospital {
+	stroke: black;
+}
+
+/* land */
+.pitch, 
+.farm, 
+.garden, 
+.forest, 
+.quarry, 
+.wood, 
+.scrub, 
+.sports_centre, 
+.playground, 
+.pedestrian, 
+.village_green, 
+.common, 
+.grass, 
+.park, 
+.golf_course, 
+.parking, 
+.library, 
+.university,
+.retail, 
+.residential {
+	fill: #FEC;
+}
+
+/* water */
+.river,
+.water {
+	fill: #ADD;
+	stroke: #ADD;
+}
+
+

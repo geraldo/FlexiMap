@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0"/>
+	<title>Vector OSM</title>
+	<link href="css/style2.css" rel="stylesheet" />
+	<link href="css/stylish-portfolio.css" rel="stylesheet" />
+	<link href="css/bootstrap.min.css" rel="stylesheet" />
+	<link href="css/bootstrap-theme.min.css" rel="stylesheet" />
+	<link href="css/custom-theme/jquery-ui-1.10.0.custom.css" rel="stylesheet" />
+	<link href="css/settings.css" rel="stylesheet" />
+	<script src="http://api.tiles.mapbox.com/mapbox.js/v1.6.1/mapbox.js"></script>
+	<link href="http://api.tiles.mapbox.com/mapbox.js/v1.6.1/mapbox.css" rel="stylesheet" />
+	<script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+	<script src="http://d3js.org/topojson.v1.min.js"></script>
+	<script src="js/colors.js"></script>
+	<script src="js/tilejson.js"></script>
+	<script src="js/leaflet-hash.js"></script>
+    <script src="js/jquery-1.11.0.min.js"></script>
+    <script src="js/jquery-ui-1.10.4.custom.min.js"></script>
+	<script src="js/spectrum.js"></script>
+	<link href="css/spectrum.css" rel="stylesheet" />
+</head>
+
+<body role="document">
+
+    <a id="menu-toggle" href="#" class="btn btn-default btn-lg toggle"><span class="glyphicon glyphicon-resize-horizontal"></span></a>
+    <div id="sidebar-wrapper">
+        <ul class="sidebar-nav">
+            <a id="menu-close" href="#" class="btn btn-default btn-lg pull-right toggle"><span class="glyphicon glyphicon-resize-horizontal"></span></a>
+
+			<li><h1>Map Settings</h1></li>
+			<li>
+				<label for="profil-select">Profil:</label>
+				<select id="profil-select">
+					<option value="color-blind">Color blind</option>
+					<option value="strong-vi">Low Vision</option>
+				</select>
+			</li>
+            <li><h2>Colors</h2></li>
+			<li>
+				<label for="color-streets">Roads:</label>
+				<input type="color" id="color-streets" value="#000" />
+			</li>
+			<li>
+				<label for="color-buildings">Buildings:</label>
+				<input type="color" id="color-buildings" value="#fff" />
+			</li>
+			<li>
+				<label for="color-land">Land:</label>
+				<input type="color" id="color-land" value="#eee" />
+			</li>
+			<li>
+				<label for="color-water">Water:</label>
+				<input type="color" id="color-water" value="#000" />
+			</li>
+            <li><h2>Text</h2></li>
+			<li>
+				<label for="font-size">Size:</label>
+				<input type="text" id="font-size" style="border:0; color:#f6931f; font-weight:bold;">
+			</li>
+			<li>
+				<div id="font-slider"></div>
+			</li>
+			<li>
+				<label for="text-color">Color:</label>
+				<input type="color" id="text-color" value="#000" />
+			</li>
+			<li>
+				<label for="font-select">Font:</label>
+				<select id="font-select">
+					<option value="sans-serif">default</option>
+					<option value="Arial,sans-serif">Arial</option>
+					<option value="Helvetica,sans-serif">Helvetica</option>
+					<option value="Verdana,serif">Verdana</option>
+					<option value="Times,serif">Times</option>
+				</select>
+			</li>
+			<li>
+				<label for="transform-select">Transform:</label>
+				<select id="transform-select">
+					<option value="none">none</option>
+					<option value="capitalize">capitalize</option>
+					<option value="uppercase">uppercase</option>
+					<option value="lowercase">lowercase</option>
+				</select>
+			</li>
+			<li>
+				<label for="font-weight">Weight:</label>
+				<input type="radio" name="font-weight" value="normal" checked /> normal
+				<input type="radio" name="font-weight" value="bold" /> bold
+			</li>
+        </ul>
+    </div>
+
+	<div id="map"></div>
+	<script src="js/map.js"></script>
+	<script src="js/style.js"></script>
+ 
+	<footer class="navbar navbar-fixed-bottom" id="footer">
+		<div class="navbar-inner">
+	        <!--<button data-target=".show-footer" data-toggle="collapse" class="btn btn-navbar"
+	        type="button" id="footer_btn">	<span class="icon-bar"></button></span>-->
+			<a id="footer_btn" data-target=".show-footer" data-toggle="collapse" href="#" class="btn btn-default btn-lg pull-right toggle"><span class="glyphicon glyphicon-resize-vertical"></span></a>
+
+		    <div class="container">
+		        <div class="nav-collapse collapse show-footer" id="footer_body">
+		            <nav>
+						<a id="reset_btn" href="#" class="btn btn-default btn-lg pull-right"><span class="glyphicon glyphicon-remove"></span></a>
+		                <h1>POIs</h1>
+						<table id="geojsonTable" class="table">
+							<thead>
+								<tr>
+									<th>Name</th>
+									<th>POI</th>
+									<!--<th>Longitude</th>
+									<th>Latitude</th>-->
+								</tr>
+							</thead>
+							<tbody>
+							</tbody>
+						</table>
+		            </nav>
+		        </div>
+		        <!--/.nav-collapse -->
+		    </div>
+		</div>
+	</footer>
+
+	<!-- Custom JavaScript for the Side Menu and Smooth Scrolling -->
+    <script src="js/bootstrap.min.js"></script>
+    <script>
+    $("#menu-close").click(function(e) {
+        e.preventDefault();
+        $("#sidebar-wrapper").toggleClass("active");
+    });
+    </script>
+    <script>
+    $("#menu-toggle").click(function(e) {
+        e.preventDefault();
+        $("#sidebar-wrapper").toggleClass("active");
+    });
+    </script>
+</body>
+</html>
